@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>一个层在另一个层之上</title>
+<style type="text/css">
+.diyi{ width:500px; height:300px; position:absolute;  z-index: 1; top: 0px;}
+.dier{ width:500px; height:300px; position:absolute; z-index: 2; top: 0px;}
+.dier2{ width:500px; height:300px; position:absolute; z-index: 3; top: 0px;}
+li{
+	list-style-type: none;
+	
+}
+</style>
+</head>
+ 
+<body>
+<div>
+    <div class="diyi" id="firstTip" align="center">
+		<h2 style="margin-top: 40px;">3.最希望达到什么效果？（可多选）</h2>
+		<ul style="text-align: center;">
+		    
+		    <span style="float: left; margin-left: 10%"><li style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin-left: 5px; width: 80px;">祛痘印</li></span>
+
+		    <span style="float: left; margin-left: 20px"><li  style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin-left: 5px; width: 80px;">祛痘</li>
+		    </span> 
+
+		    <span style="float: left; margin-left: 20px"><li  style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin-left: 5px; width: 80px;">美白</li>
+		    </span>
+
+		   
+		    
+		</ul>
+		<br>
+		<p > <input onclick="firstTip()" type="" name="" style="margin: 40px; font-size: 20px; border-radius: 5px; background:#FF3366; color: white; text-align: center; font-weight: bolder;" value="提交"> </p>
+		
+
+
+
+
+    </div>
+    <div class="dier" id="secondTip" style="display: none;" align="center" >
+		<h2 style=" margin-top: 40px;">2.你长痘多久了？</h2>
+		<ul style="text-align: center;">
+		    
+		    <span style="float: left; margin-left: 20%"><li onclick="secondTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin-left: 5px; width: 80px;">1年以下</li>
+		    <li onclick="secondTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin: 5px; width: 80px;">5年以上</li></span>
+
+		    <span style="float: left; margin-left: 20px"><li onclick="secondTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin-left: 5px; width: 80px;">1-5年</li>
+		    <li onclick="secondTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin: 5px; width: 80px;">不记得</li></span>
+
+		   
+		    
+		</ul>
+
+
+
+    </div>
+
+
+
+    <div class="dier2" id="thirdTip" style="display: none;" align="center">
+		<h4 style="">填写痘痘档案</h4>
+		<p style="text-align: center; color: #FF3366; font-weight: bold;">佳佳老师在线为你定制美肤方案</p>
+		<h3 style="text-align: center;">1.您的痘痘是？</h3>
+		<ul style="text-align: center;">
+		    
+		    <span style="float: left; margin: 10px"><li onclick="thirdTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin: 5px; width: 80px;">结节型痘痘</li>
+		    <li onclick="thirdTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin: 5px;">丘疹型痘痘</li></span>
+
+		    <span style="float: left; margin: 10px"><li onclick="thirdTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin: 5px;">囊肿型痘痘</li>
+		    <li onclick="thirdTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin: 5px;">黑头粉刺</li></span>
+
+		    <span style="float: left; margin: 10px;"><li onclick="thirdTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin: 5px; width: 80px;">白头粉刺</li>
+		    <li onclick="thirdTip()" style=" background: #FF3366; color: white; border-radius: 3px; padding:5px; margin: 5px; width: 80px;">其他</li></span>
+		    
+		</ul>
+
+
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+	var firstObj = document.getElementById("firstTip");
+	var secondObj = document.getElementById("secondTip");
+	var thirdObj = document.getElementById("thirdTip");
+	// oneObj.click(function() {
+	// 	alert("firstTip ");
+	// });
+
+	function firstTip(){
+		
+		firstObj.style.display = "none";
+		thirdObj.style.display = "inline";
+	}
+
+	function thirdTip(){
+		
+		thirdObj.style.display = "none";
+		secondObj.style.display = "inline";
+	}
+
+	function secondTip(){
+		
+		secondObj.style.display = "none";
+		firstObj.style.display = "inline";
+	}
+	firstTip();
+
+</script>
+</body>
+</html>
